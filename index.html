@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S3 Static Site Lab</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="badge">Hosted on Amazon S3</div>
+    <h1>It works! 🎉</h1>
+    <p>This static website is served straight from an S3 bucket with static website hosting enabled.</p>
+    <button id="themeBtn" class="btn">Toggle dark mode</button>
+  </header>
+
+  <main class="container">
+    <section class="cards">
+      <article class="card">
+        <h2>🪣 Bucket</h2>
+        <p>Files live as objects in an S3 bucket. No servers to manage.</p>
+      </article>
+      <article class="card">
+        <h2>🔓 Public read</h2>
+        <p>A bucket policy grants <code>s3:GetObject</code> to everyone so browsers can load the pages.</p>
+      </article>
+      <article class="card">
+        <h2>📄 Index &amp; error</h2>
+        <p><code>index.html</code> is the home page, <code>error.html</code> handles missing pages.</p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Live info from your browser</h2>
+      <ul class="info">
+        <li><span>Page URL</span><strong id="url">–</strong></li>
+        <li><span>Loaded at</span><strong id="time">–</strong></li>
+        <li><span>Button clicks</span><strong id="count">0</strong></li>
+      </ul>
+      <div class="actions">
+        <button id="clickBtn" class="btn">Click me</button>
+        <a class="btn btn-outline" href="this-page-does-not-exist.html">Test the error page</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>AWS S3 static website hosting lab · <span id="year"></span></footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>
